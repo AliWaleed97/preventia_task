@@ -1,5 +1,11 @@
 .wrapper {
   padding-top: 65px;
+  .no-posts {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 600px;
+  }
   .card-action {
     display: flex;
     justify-content: space-between;
