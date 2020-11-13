@@ -12,7 +12,6 @@ import { UtilsService } from 'src/app/_services/utils.service';
 export class PostDetailsComponent implements OnInit {
   postID;
   post;
-  comments;
   likes;
   comment;
   constructor(
@@ -43,11 +42,12 @@ export class PostDetailsComponent implements OnInit {
     console.log(this.comment.value);
     try {
       let comment = await this.posts.commentPost(this.comment.value);
-      this.comments.push(comment);
+      this.post.comments.push(comment);
       this.comment.reset();
 
       this.utils.handleSuccess('Comment created successfully!');
     } catch (error) {
+      console.log(error);
       this.utils.handleSuccess('comment failed to be created');
     }
   }

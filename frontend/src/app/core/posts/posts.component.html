@@ -27,7 +27,11 @@
     <a class="btn-floating btn-large" routerLink="add">
       <i class="large material-icons">mode_edit</i>
     </a>
-    <a (click)="sort()" class="btn-floating btn-large">
+    <a
+      *ngIf="posts.length >= 2"
+      (click)="sort()"
+      class="btn-floating btn-large"
+    >
       <i class="large material-icons">sort</i>
     </a>
   </div>
