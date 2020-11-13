@@ -11,3 +11,7 @@
   1. First ``` npm ``` and ```angular``` should be installed globally
   2. ``` cd frontend/``` then install needed dependencies using ``` npm i```
   3. ```npm start``` to run frontend
+  
+  ## To access admin stories from DjangoAdmin.
+  1. First create a super user using ```python manage.py createsuperuser```
+  2. Navigate to ```localhost:8000/admin```
