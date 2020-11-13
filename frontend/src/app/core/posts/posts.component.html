@@ -1,0 +1,34 @@
+<div class="wrapper row">
+  <div *ngIf="!posts?.length" class="no-posts">
+    No posts yet, create your first post.
+  </div>
+  <div *ngFor="let post of posts" class="col s8 offset-s2">
+    <div class="card">
+      <div class="card-image">
+        <img src="assets/sample-1.jpg" />
+        <span class="card-title">{{ post.title }}</span>
+      </div>
+      <div class="card-content">
+        <p>
+          {{
+            post.content.length > 200
+              ? (post.content | slice: 0:200) + ".."
+              : post.content
+          }}
+        </p>
+      </div>
+      <div class="card-action">
+        <a routerLink="/posts/{{ post.id }}">read more</a>
+        <i (click)="like(post.id)" class="fa fa-heart"></i>
+      </div>
+    </div>
+  </div>
+  <div class="fixed-action-btn">
+    <a class="btn-floating btn-large" routerLink="add">
+      <i class="large material-icons">mode_edit</i>
+    </a>
+    <a (click)="sort()" class="btn-floating btn-large">
+      <i class="large material-icons">sort</i>
+    </a>
+  </div>
+</div>

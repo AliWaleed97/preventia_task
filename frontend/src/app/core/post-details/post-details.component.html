@@ -1,0 +1,38 @@
+<!-- <header></header> -->
+<div class="wrapper">
+  <img src="assets/sample-1.jpg" alt="" />
+  <div class="info">
+    <h1>{{ post?.title }}</h1>
+    <div class="likes">{{ likes?.length }}<i class="fa fa-heart"></i></div>
+  </div>
+  <p>{{ post?.content }}</p>
+  <hr />
+  <div class="comments">
+    <div class="comment" *ngFor="let comment of post?.comments">
+      <span
+        >{{ comment?.author_detail?.username }}
+        <span class="time">2hrs ago</span></span
+      >{{ comment.content }}
+    </div>
+  </div>
+  <div [formGroup]="comment" class="add-comment">
+    <div class="input-field col s8">
+      <input
+        formControlName="content"
+        id="comment"
+        type="text"
+        class="validate"
+      />
+      <label for="comment"></label>
+    </div>
+    <div class="col s4">
+      <button
+        (click)="submit()"
+        [disabled]="comment.invalid"
+        class="waves-effect waves-light btn"
+      >
+        Add Comment
+      </button>
+    </div>
+  </div>
+</div>

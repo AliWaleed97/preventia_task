@@ -1,0 +1,27 @@
+<div [formGroup]="postForm" class="row">
+  <h1>Add Post</h1>
+
+  <div class="input-field col s12">
+    <input formControlName="title" id="title" type="text" class="validate" />
+    <label for="title">Title</label>
+  </div>
+  <div class="input-field col s12">
+    <textarea
+      formControlName="content"
+      id="content"
+      type="text"
+      class="validate materialize-textarea"
+    ></textarea>
+
+    <label for="content">Body</label>
+  </div>
+  <div class="col s12">
+    <button
+      [disabled]="postForm.invalid"
+      (click)="submit()"
+      class="waves-effect waves-light btn"
+    >
+      Submit
+    </button>
+  </div>
+</div>

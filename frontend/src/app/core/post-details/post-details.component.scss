@@ -1,0 +1,34 @@
+.wrapper {
+  padding: 5rem 0px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  .info {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    i {
+      padding-left: 3px;
+    }
+  }
+  .comments {
+    display: flex;
+    flex-direction: column;
+    span {
+      color: #26a69a;
+      .time {
+        color: #aaa;
+        font-size: 10px;
+      }
+    }
+    .comment {
+      display: flex;
+      flex-direction: column;
+      padding: 5px 0px;
+      text-transform: capitalize;
+    }
+  }
+  .add-comment {
+    padding-top: 5px;
+  }
+}

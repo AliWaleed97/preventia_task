@@ -1,0 +1,30 @@
+<h1>Login</h1>
+<div [formGroup]="loginForm" class="row">
+  <div class="input-field col s12">
+    <input
+      formControlName="username"
+      id="username"
+      type="text"
+      class="validate"
+    />
+    <label for="username">Username</label>
+  </div>
+  <div class="input-field col s12">
+    <input
+      formControlName="password"
+      id="password"
+      type="password"
+      class="validate"
+    />
+    <label for="password">Password</label>
+  </div>
+  <div class="col s12">
+    <button
+      [disabled]="loginForm.invalid"
+      (click)="submit()"
+      class="waves-effect waves-light btn"
+    >
+      Submit
+    </button>
+  </div>
+</div>
