@@ -32,7 +32,7 @@ export class RegisterComponent implements OnInit {
       this.utils.handleSuccess('Registered successfully!');
       this.router.navigate(['/auth/login'], {});
     } catch (error) {
-      this.utils.handleError(error.error.detail);
+      this.utils.handleError('username already exists');
     }
   }
 }
