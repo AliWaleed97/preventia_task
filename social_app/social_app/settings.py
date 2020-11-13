@@ -12,6 +12,13 @@ https://docs.djangoproject.com/en/2.2/ref/settings/
 
 import os
 from datetime import timedelta
+import environ
+env = environ.Env(
+    # set casting, default value
+    DEBUG=(bool, False)
+)
+# reading .env file
+environ.Env.read_env()
 
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
@@ -97,13 +104,7 @@ WSGI_APPLICATION = 'social_app.wsgi.application'
 # https://docs.djangoproject.com/en/2.2/ref/settings/#databases
 
 DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.mysql',
-        'USER':'root',
-        'PASSWORD':'Football_90',
-        'HOST':'localhost',
-        'NAME':'social_app'
-    }
+    'default': env.db()
 }
 
 

@@ -11,6 +11,7 @@ djangorestframework = "*"
 mysqlclient = "*"
 djangorestframework-simplejwt = "*"
 django-filter = "*"
+django-environ = "*"
 
 [requires]
 python_version = "3.9"
